@@ -90,7 +90,7 @@ Rails.application.configure do
   end
 
   # Timber.io logger
-  send_logs_to_timber = ENV["SEND_LOGS_TO_TIMBER"] || "true" # <---- production should send timber logs by default
+  send_logs_to_timber = ENV["SEND_LOGS_TO_TIMBER"] || "false" # <---- production should send timber logs by default
   log_device = send_logs_to_timber == "true" ? Timber::LogDevices::HTTP.new(ENV["TIMBER"]) : STDOUT
   logger = Timber::Logger.new(log_device)
   logger.level = config.log_level

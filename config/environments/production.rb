@@ -110,7 +110,7 @@ Rails.application.configure do
   config.app_domain = ENV["APP_DOMAIN"]
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_deliveries = false
   config.action_mailer.default_url_options = { host: ENV["APP_PROTOCOL"] + ENV["APP_DOMAIN"] }
   ActionMailer::Base.smtp_settings = {
     address: "smtp.sendgrid.net",
